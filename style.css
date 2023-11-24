@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --font-color: #424242;
+    --bg-color: #ffffff;
+    --main-bg: #f1a4ed;
+}
+
+.dark {
+    --font-color: #ffffff;
+    --bg-color: #313131;
+    --main-bg: #7c2278;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-bg);
+    color: var(--font-color);
+    font-size: 14px;
+    transition: .4s;
+}
+
+.panel {
+    width: 400px;
+    height: 700px;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+        0 10px 10px rgba(0,0,0,0.22);
+    text-align: center;
+    transition: .4s;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin: 40px 0;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.placeholder {
+    height: 30px;
+    border-radius: 10px;
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: darkgray;
+    background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
+
+.p1 {
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+.p2 {
+    margin-bottom: 20px;
+}
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+ 
+.toggle input {
+    display: none;
+}
+ 
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: .4s;
+    border-radius: 34px;
+}
+ 
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--bg-color);
+    transition: .4s;
+    border-radius: 50%;
+}
+ 
+input:checked + .slider {
+    background-color: var(--font-color);
+}
+ 
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
